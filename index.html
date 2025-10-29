@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>BonezMC</title>
+    <link rel="icon" type="image/png" href="img/favicon.png?v=1"> <!-- This only changes when commited -->
+    <link rel="stylesheet" href="src/index.css?v=1"> <!-- This only changes when commited -->
+</head>
+<body>
+    <!-- Header / Hero Section -->
+    
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="BonezMC Logo" class="logo">
+        </div>
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#tutorials">Tutorials</a>
+            <a href="#roadmap">Roadmap</a>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <h1><span class="title">BonezMC Minecraft Server</span></h1>
+        <p>BonezMC is a semi-vanilla survival server focused on keeping Minecraft simple, fair, and fun. No pay-to-win, no overpowered kits, and no cluttered menus. Just real survival with helpful features that respect the vanilla feel.</p>
+        <p id="lagText">Lagging?</p>
+        <button id="removeGifs">Click to remove all animations</button>
+    </section>
+    
+    <section class="section" id="features">
+        <center>
+            <h1>&#128296; Features &#9935;</h1>
+            <p>BonezMC has a great selection of features that make survival easier. Such as:</p>
+            <span>&bull; Veinminer - Mine a whole ore vein just by mining one of its ores.</span><br>
+            <div class="iconContainer">
+                <img class="icon" alt="veinminer Example Video" src="https://www.bonezmc.org/game/veinminer.gif">
+            </div><br>
+            <span>&bull; TreeFeller - Chop an entire tree just by chopping one block.</span><br>
+            <div class="iconContainer">
+                <img class="icon" alt="treefeller Example Video" src="https://www.bonezmc.org/game/treefeller.gif">
+            </div><br>
+            <span>&bull; EssentialsX - A bundle of survival commands like /home, /tpa and more!</span><br>
+            <div class="iconContainer">
+                <img class="icon" alt="essentialsx Example Video" src="https://www.bonezmc.org/game/home.gif">
+            </div><br>
+            <span>&bull; GriefPrevention - Claim land and more!</span><br>
+            <div class="iconContainer">
+                <img class="icon" alt="claim Example Video" src="https://www.bonezmc.org/game/claim.gif">
+            </div><br>
+            <span>&bull; ChestShop - Make shops to sell your own items at your own set price!</span><br>
+            <div class="iconContainer">
+                <img class="icon" alt="chestshop Example Video" src="https://www.bonezmc.org/game/shop.gif">
+            </div><br>
+            <span>&bull; PlayerWarps - Places that any player can teleport to. Such as a shop, farm, and more!</span><br>
+            <div class="iconContainer">
+                <img class="icon" alt="playerwarps Example Video" src="https://www.bonezmc.org/game/pw.gif">
+            </div><br>
+        </center>
+    </section>
+    
+    <section class="section" id="tutorials">
+        <center>
+            <h1>Tutorials</h1>
+            <h3>Claiming Land</h3>
+            <div class="iconContainer">
+                <span>Claiming land is an amazing way to make sure that nobody can touch your builds!</span><br>
+                <span>How to claim land: with a golden shovel (comes in the starter kit), right click (PC) LT (Console) or Tap (Mobile) 2 corners of where you want your land to be. Any claim must be a minimum of 3 x 3 blocks.<br>An example is shown below.</span><br>
+                <img class="icon" alt="claim Example Video" src="https://www.bonezmc.org/game/claim.gif"><br><br>
+                <p>Trusting Players</p>
+                <span>For whatever reason you may need others to be able to build in your claim, like friends or a team building a base together, you can trust them using /trust [username]. Replace [username] with the name of the player you want to trust.</span><br>
+                <span>If you change your mind and decide you don't want them to access anything in your claim, you can untrust them using /untrust [username].<br>An example is shown below. To get a list of players that are trusted in your claim, you can use /trustlist.</span><br>
+                <img class="icon" alt="/trust /untrust Example Video" src="https://www.bonezmc.org/game/trust.gif"><br><br>
+                <p>Checking land Claims</p>
+                <span>In order to check if someone has claimed some land and who it is, right click (PC) LT (Console) or Tap (Mobile) the land with a stick.<br>An example is shown below.</span><br>
+                <img class="icon" alt="check claims Example Videdo" src="https://www.bonezmc.org/game/checkclaim.gif"><br><br>
+                <p>Unclaiming your land</p>
+                <span>In order to get rid of land claims, you can use /unclaim or /abandonclaim</span><br>
+                <span>To get rid of all your land claims all at once, use /abandonallclaims and then quickly /abandonallclaims confirm<br>An example is shown below.</span><br>
+                <img class="icon" alt="/unclaim Example Video" src="https://www.bonezmc.org/game/unclaim.gif"><br>
+                <button id="claimMore">Click to learn more</button>
+            </div>
+        </center>
+    </section>
+    
+    <div class="learnMore hide" id="learnMoreClaim">
+        <button class="learnMoreClose">X</button>
+        <center>
+            <h1>Learn More</h1>
+            <div class="iconContainer">
+                <h3>Land Claims</h3>
+                <p>Special permissions for land claims</p>
+                <button class="learnMoreButton">
+                    <a href="https://legacy.griefprevention.com/commands/">griefprevention.com</a>
+                </button>
+            </div>
+        </center>
+    </div>
+    
+    <div class="background-view"></div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Squeaky Llama</p>
+    </footer>
+    
+    <script src="src/datetime.js?v=1"></script> <!-- This only changes when commited -->
+    <script src="src/holiday.js?v=1"></script>
+    <script src="src/index.js?v=1"></script>
+</body>
+</html>
