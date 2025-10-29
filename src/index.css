@@ -1,0 +1,358 @@
+@font-face {
+    font-family: "Mojangles";
+    src: url("../fonts/mojangles.otf") format("opentype");
+}
+
+/* ====================
+GLOBAL BASE
+==================== */
+:root {
+    --primary: #f86158;
+    --primary-light: #f28a85;
+    --secondary: #01b2c2;
+    --surface: url('../img/textures/spruce.png');
+    --surface2: url('../img/textures/stone.png');
+    --planks: url('../img/textures/planks.png');
+    --dirt: url('../img/textures/dirt.png');
+    --on-surface: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --radius: 18px;
+    --transition: 0.3s ease;
+    --font-family: "Mojangles", Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Mojangles", Arial, Helvetica, sans-serif;
+    color: var(--on-surface);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.6s var(--transition);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+}
+
+:focus {
+    outline: none;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-light);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+/* ====================
+HOLIDAY THEMES
+==================== */
+
+/* Halloween */
+body.halloween-invert {
+    filter: invert(1) hue-rotate(180deg);
+    transition: filter 2s ease;
+}
+
+/* ====================
+ABOVE DOCUMENT ELEMENTS
+==================== */
+
+.learnMore {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    background: var(--planks);
+    padding: 0.7em;
+    z-index: 1001;
+    width: 45%;
+    height: 100%;
+    transition: left var(--transition);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.learnMore.show {
+    left: 55%;
+    visibility: visible;
+    opacity: 1;
+    transition: left var(--transition);
+}
+
+.learnMore button {
+    cursor: pointer;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    color: var(--on-surface);
+    font-family: var(--font-family);
+    background: var(--surface2);
+}
+
+.learnMore .learnMoreButton {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: var(--on-surface);
+    font-family: var(--font-family);
+    background: var(--surface);
+}
+
+.learnMore .learnMoreButton a {
+    color: var(--on-surface);
+}
+
+/* ====================
+HEADER & NAVIGATION
+==================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface2);
+    padding: 0.8rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px var(--shadow-color);
+    backdrop-filter: blur(10px);
+    transition: background var(--transition), box-shadow var(--transition);
+}
+
+.header:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header .logo-container .logo {
+    height: 3.25em;
+    object-fit: contain;
+    transition: transform var(--transition);
+}
+
+.header .logo-container .logo:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+.nav {
+    display: flex;
+    gap: 1.2rem;
+    overflow-x: auto;
+}
+
+.nav a {
+    color: var(--on-surface);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.nav a:hover {
+    color: #fff;
+    background: var(--primary-light);
+}
+
+/* ====================
+HERO SECTION
+==================== */
+.hero {
+    text-align: center;
+    padding: 5rem 1.5rem;
+    background: var(--surface);
+    color: white;
+    border-radius: var(--radius);
+    margin: 2rem auto;
+    max-width: 1100px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.hero:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(166, 117, 117, 0.15);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.hero .title {
+    /* Default: color: rgb(255, 246, 188); */
+    color: rgb(255, 188, 188);
+}
+
+.hero button {
+    color: var(--on-surface);
+    background: var(--surface2);
+    font-family: var(--font-family);
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.7em;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.hero button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(166, 117, 117, 0.15);
+}
+
+/* ====================
+SECTIONS
+==================== */
+.section {
+    padding: 3.5rem 1.2rem;
+    max-width: 1000px;
+    margin: auto;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    margin-bottom: 2rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.section h2 {
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.section ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+.section li {
+    margin-bottom: 0.8rem;
+}
+
+.section a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.section a:hover {
+    background: var(--primary-light);
+    color: #fff;
+}
+
+.iconContainer {
+    border-radius: var(--radius);
+    background: var(--surface2);
+    overflow: hidden;
+    padding: 1em;
+}
+
+.section .icon {
+    width: 32em;
+    height: auto;
+    border-radius: var(--radius);
+}
+
+.section button {
+    color: var(--on-surface);
+    background: var(--planks);
+    font-family: var(--font-family);
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.7em;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.section button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(166, 117, 117, 0.15);
+}
+
+/* ====================
+FOOTER
+==================== */
+.background-view {
+    display: block;
+    height: 100vh;
+}
+
+.footer {
+    background: var(--dirt);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    box-shadow: 0 -4px 10px var(--shadow-color);
+}
+
+/* ====================
+MEDIA QUERIES
+==================== */
+@media screen and (max-width: 630px) {
+    body {
+        overflow-x: hidden;
+    }
+    .logo {
+        display: none;
+    }
+    #navpanel {
+        width: 80%;
+        right: -80%;
+    }
+    #navpanel.show {
+        transform: translateX(-80%);
+    }
+}
+
+/* ====================
+LOAD ROTATION ANIMATION
+==================== */
+@keyframes loadrotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes flyAcross {
+    from { left: -150px; transform: scale(1) rotate(0deg); }
+    to { left: 110vw; transform: scale(1.2) rotate(10deg); }
+}
