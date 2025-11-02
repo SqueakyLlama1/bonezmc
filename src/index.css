@@ -356,6 +356,9 @@ MEDIA QUERIES
     #navpanel.show {
         transform: translateX(-80%);
     }
+    .playerListContainer .playerItem {
+        width: calc(50% - 10px);
+    }
 }
 
 /* ====================
